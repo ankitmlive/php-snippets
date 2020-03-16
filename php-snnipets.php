@@ -24,24 +24,22 @@
 
 
 // fetch financial year from invoice date -- On Development
-/*  $invoice_date = "28-02-2018";
-  $date=date_create($invoice_date);
-  echo date_format($date,"Y/m/d");
+$invoice_date = "30-12-2020";
   
-  echo $invoice_year = date('Y', strtotime($invoice_date)) . "<br>";
-  echo $financial_date    = "31-03-$invoice_year". "<br>";
+$date=date_create($invoice_date);
+ $date1= date_format($date,"Y-m-d");
 
-  $dateTimestamp1 = strtotime($invoice_date); 
-  $dateTimestamp2 = strtotime($financial_date); 
+$invoice_year = date('Y', strtotime($date1));
+echo $financial_date    = "$invoice_year-03-31";
 
-  if ($dateTimestamp1 < $dateTimestamp2) {
+if ($date1 < $financial_date) {
     
-      echo $year_duration = date("y", strtotime('-1 year'))."-".date('y');
-    
-  } else {
-    
-    //echo $year_duration = date("y")."-".date('y', strtotime('+1 year'));
-  } */
+    echo $year_duration = date("y",strtotime($date1))."-".date('y', strtotime('+1 year', strtotime($date1)));
+  
+} else {
+  
+   echo $year_duration = date("y",strtotime('+1 year', strtotime($date1)))."-".date('y', strtotime('+2 year', strtotime($date1)));
+} 
 
 
 ?>
